@@ -4,10 +4,8 @@ import socket
 import app.utils.config as config
 import app.utils.errors as errors
 import app.utils.json_serializer as json
-import memoize
 
 memo_keys = {}
-#memo = memoize.Memoizer(memo_keys)
 
 """
 @apiDefine AuthHeader
@@ -20,7 +18,6 @@ memo_keys = {}
  """
 
 
-#@memo(max_age=3600)
 def isValidToken(authKey):
     """
     Obtiene el currentUser desde el servicio de autentificación

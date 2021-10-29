@@ -3,13 +3,8 @@ import socket
 import app.utils.config as config
 import app.utils.errors as errors
 import app.utils.json_serializer as json
-import memoize
-
-memo_keys = {}
-#memo = memoize.Memoizer(memo_keys)
 
 
-#@memo(max_age=30)
 def get_article(id_article):
     conn = http.client.HTTPConnection(
         socket.gethostbyname(config.get_catalog_server_url()),
