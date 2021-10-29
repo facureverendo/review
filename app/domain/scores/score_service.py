@@ -42,10 +42,6 @@ def add_score(parameters, id_user):
         db.score.replace_one({'id_user': id_user, 'id_article': parameters['id_article'], 'active': True}, r)
         del r['active']
 
-        rabbit.send_new_score(parameters['id_article'], calculate_score(parameters['id_article']))
-
-        return r
-
     score.update(parameters)
     score.update({"id_user": id_user, 'value': parameters['value'], 'id_article': parameters['id_article']})
 
